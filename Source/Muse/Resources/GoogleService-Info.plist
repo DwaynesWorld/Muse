@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>190348130164-k7q15n1ulaikof096o7uhl74imhha5hl.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.190348130164-k7q15n1ulaikof096o7uhl74imhha5hl</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCMOXb2CpWR6kFFtuTogheOFHm_3IBwP8s</string>
+	<key>GCM_SENDER_ID</key>
+	<string>190348130164</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.kthompson.muse</string>
+	<key>PROJECT_ID</key>
+	<string>muse-3105d</string>
+	<key>STORAGE_BUCKET</key>
+	<string>muse-3105d.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:190348130164:ios:fef0b71de6c7b9c2551e21</string>
+	<key>DATABASE_URL</key>
+	<string>https://muse-3105d.firebaseio.com</string>
+</dict>
+</plist>

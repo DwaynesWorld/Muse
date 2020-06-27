@@ -1,0 +1,32 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '13.0'
+inhibit_all_warnings!
+
+target 'Muse' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Muse
+  pod 'lottie-ios'
+  pod "PromiseKit"
+  pod 'Swinject'
+  pod 'SwiftIcons'
+  pod 'CodableFirebase'
+
+  # Pods for Muse - Firebase
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
+
+  target 'MuseTests' do
+    inherit! :search_paths
+    
+    # Pods for testing
+    pod 'Nimble'
+  end
+
+  target 'MuseUITests' do
+    # Pods for testing
+  end
+end
