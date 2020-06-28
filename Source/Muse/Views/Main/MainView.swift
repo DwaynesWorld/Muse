@@ -9,44 +9,39 @@
 import SwiftUI
 
 struct MainView: View {
-  @State private var selectedTab = 0
+  @State private var selectedTab = 1
   
   var body: some View {
     TabView(selection: $selectedTab) {
-      Text("Home")
-        .onTapGesture {
-          self.selectedTab = 0
-        }.tabItem {
-          Image(systemName: selectedTab == 0 ? "house" : "house.fill")
-          Text("Home")
-        }
+      DashboardView()
+        .tabItem {
+          Image(systemName: selectedTab == 0 ? "house.fill" : "house")
+          Text("Dashboard")
+      }.tag(0)
       
-      Text("Projects").onTapGesture {
-        self.selectedTab = 1
-      }.tabItem {
-        Image(systemName: "tray.full")
+      ProjectsView()
+        .tabItem {
+          Image(systemName:  selectedTab == 1 ? "tray.full.fill" : "tray.full")
           Text("Projects")
-      }
+      }.tag(1)
       
-      Text("Analytics").onTapGesture {
-        self.selectedTab = 2
-      }.tabItem {
-        Image(systemName: "chart.bar")
-        Text("Analytics")
-      }
+      Text("Analytics")
+        .tabItem {
+          Image(systemName:  selectedTab == 2 ? "chart.bar.fill" : "chart.bar")
+          Text("Analytics")
+      }.tag(2)
       
-      Text("Settings").onTapGesture {
-        self.selectedTab = 3
-      }.tabItem {
-        Image(systemName: "gear")
+      Text("Settings")
+        .tabItem {
+          Image(systemName: "gear")
           Text("Settings")
-      }
+      }.tag(3)
     }
   }
 }
 
 struct MainView_Previews: PreviewProvider {
   static var previews: some View {
-    MainView()
+      MainView()
   }
 }

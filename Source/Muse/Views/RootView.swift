@@ -16,16 +16,14 @@ struct RootView: View {
   }
   
   var body: some View {
-    NavigationView {
+    Group {
       if self.authenticationService.isLoggedIn {
         MainView()
       } else {
         LoginView()
       }
-    }
-    .navigationViewStyle(StackNavigationViewStyle())
-    .onTapGesture {
-      print(self.authenticationService.isLoggedIn)
+    }.onAppear {
+      self.authenticationService.signOut { _ in } 
     }
   }
 }

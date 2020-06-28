@@ -110,7 +110,7 @@ class AuthenticationService: ObservableObject  {
         print("auth state changed - logged in")
         self.isLoggedIn = true
       } else {
-        print("auth state changed - logged in")
+        print("auth state changed - logged out")
         self.isLoggedIn = false
       }
     }
