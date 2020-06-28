@@ -270,6 +270,8 @@ PODS:
     - "gRPC-C++ (~> 1.28.0)"
     - leveldb-library (~> 1.22)
     - nanopb (~> 1.30905.0)
+  - FirebaseFirestoreSwift (0.3.0):
+    - FirebaseFirestore (>= 1.6.1, ~> 1.6)
   - FirebaseInstallations (1.4.0):
     - FirebaseCore (~> 6.8)
     - GoogleUtilities/Environment (~> 6.6)
@@ -359,6 +361,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Firestore
   - Firebase/Storage
+  - FirebaseFirestoreSwift
   - lottie-ios
   - Nimble
   - PromiseKit
@@ -376,6 +379,7 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseCoreDiagnostics
     - FirebaseFirestore
+    - FirebaseFirestoreSwift
     - FirebaseInstallations
     - FirebaseStorage
     - GoogleAppMeasurement
@@ -404,6 +408,7 @@ SPEC CHECKSUMS:
   FirebaseCore: feda061cb1ee6d8ad4824f4a4a8ffbcfe284f595
   FirebaseCoreDiagnostics: 4505e4d4009b1d93f605088ee7d7764d5f0d1c84
   FirebaseFirestore: 4291ab811ad323a2b807a4a481cd5df2e445a676
+  FirebaseFirestoreSwift: 0cda93628782ca5a817cfecd2a8c0187436c0ae5
   FirebaseInstallations: 293f567159b6d66d1c990f13bb868066096c94ec
   FirebaseStorage: af7bdbd12177cf567df00904e3e3a93704f25b15
   GoogleAppMeasurement: 2fd5c5a56c069db635c8e7b92d4809a9591d0a69
@@ -422,6 +427,6 @@ SPEC CHECKSUMS:
   SwiftIcons: 3b748e57d9eee0c7c8d3bdbf2d742c0b1b4c6172
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
 
-PODFILE CHECKSUM: 49561bc593890216fb5f749a4b176f2d708def24
+PODFILE CHECKSUM: 16f20e46b47e1aff7109c82ff48e1a18d034609c
 
 COCOAPODS: 1.8.4

@@ -36,6 +36,15 @@
 		68B325C324A90C0B00B90F24 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B325C124A90C0B00B90F24 /* LoadingView.swift */; };
 		68B325C424A90C0B00B90F24 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B325C224A90C0B00B90F24 /* LottieView.swift */; };
 		68B325C724A90C1300B90F24 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B325C624A90C1300B90F24 /* RoundedCorner.swift */; };
+		68B325C924A9297C00B90F24 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B325C824A9297C00B90F24 /* Project.swift */; };
+		68B325CB24A92BEE00B90F24 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B325CA24A92BEE00B90F24 /* Task.swift */; };
+		68B325CD24A92DEB00B90F24 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B325CC24A92DEB00B90F24 /* Status.swift */; };
+		68B325CF24A932C800B90F24 /* ProjectsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B325CE24A932C800B90F24 /* ProjectsViewModel.swift */; };
+		68B325D224A934BA00B90F24 /* ProjectRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B325D124A934BA00B90F24 /* ProjectRepository.swift */; };
+		68B325D424A93D3800B90F24 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B325D324A93D3800B90F24 /* Team.swift */; };
+		68B325D624A9498A00B90F24 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B325D524A9498A00B90F24 /* UserService.swift */; };
+		68B325D824A94B8700B90F24 /* MuseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B325D724A94B8700B90F24 /* MuseUser.swift */; };
+		68B325DA24A94EA900B90F24 /* Alias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B325D924A94EA900B90F24 /* Alias.swift */; };
 		C0A090AF5C557BFF06C153E2 /* Pods_Muse_MuseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B78CCBBD2B3D2790358C82F2 /* Pods_Muse_MuseUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +104,15 @@
 		68B325C124A90C0B00B90F24 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		68B325C224A90C0B00B90F24 /* LottieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		68B325C624A90C1300B90F24 /* RoundedCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		68B325C824A9297C00B90F24 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		68B325CA24A92BEE00B90F24 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		68B325CC24A92DEB00B90F24 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		68B325CE24A932C800B90F24 /* ProjectsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewModel.swift; sourceTree = "<group>"; };
+		68B325D124A934BA00B90F24 /* ProjectRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectRepository.swift; sourceTree = "<group>"; };
+		68B325D324A93D3800B90F24 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		68B325D524A9498A00B90F24 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		68B325D724A94B8700B90F24 /* MuseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseUser.swift; sourceTree = "<group>"; };
+		68B325D924A94EA900B90F24 /* Alias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alias.swift; sourceTree = "<group>"; };
 		AD099FBFA537BFD739493084 /* Pods_MuseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B78CCBBD2B3D2790358C82F2 /* Pods_Muse_MuseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Muse_MuseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEE2BC2A4CE16CAF3169B947 /* Pods-MuseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuseTests.debug.xcconfig"; path = "Target Support Files/Pods-MuseTests/Pods-MuseTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -154,10 +172,10 @@
 		68B3255924A79C8E00B90F24 /* Muse */ = {
 			isa = PBXGroup;
 			children = (
-				68B325AD24A7DAC400B90F24 /* Infrastructure */,
 				68B325A524A7D89800B90F24 /* Models */,
 				68B3259024A7B39B00B90F24 /* Views */,
 				68B325AA24A7D9B500B90F24 /* Services */,
+				68B325AD24A7DAC400B90F24 /* Infrastructure */,
 				68B325A024A7D12200B90F24 /* Extensions */,
 				68B3259624A7C19B00B90F24 /* Common */,
 				68B3258D24A7B2E800B90F24 /* Resources */,
@@ -284,6 +302,11 @@
 		68B325A624A7D8A000B90F24 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				68B325D724A94B8700B90F24 /* MuseUser.swift */,
+				68B325D324A93D3800B90F24 /* Team.swift */,
+				68B325C824A9297C00B90F24 /* Project.swift */,
+				68B325CA24A92BEE00B90F24 /* Task.swift */,
+				68B325CC24A92DEB00B90F24 /* Status.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -292,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				68B325A824A7D8D900B90F24 /* LoginViewModel.swift */,
+				68B325CE24A932C800B90F24 /* ProjectsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -300,6 +324,8 @@
 			isa = PBXGroup;
 			children = (
 				68B325AB24A7DA0800B90F24 /* AuthenticationService.swift */,
+				68B325D524A9498A00B90F24 /* UserService.swift */,
+				68B325D124A934BA00B90F24 /* ProjectRepository.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -309,6 +335,7 @@
 			children = (
 				68B325AE24A7DAD700B90F24 /* Injected.swift */,
 				68B325B024A7DAF600B90F24 /* AppContainer.swift */,
+				68B325D924A94EA900B90F24 /* Alias.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -632,21 +659,30 @@
 				68B325BE24A9079600B90F24 /* ProjectsView.swift in Sources */,
 				68B3255B24A79C8E00B90F24 /* AppDelegate.swift in Sources */,
 				68B3255D24A79C8E00B90F24 /* SceneDelegate.swift in Sources */,
+				68B325CF24A932C800B90F24 /* ProjectsViewModel.swift in Sources */,
 				68B325B824A7F99E00B90F24 /* MainView.swift in Sources */,
 				68B325C324A90C0B00B90F24 /* LoadingView.swift in Sources */,
+				68B325D624A9498A00B90F24 /* UserService.swift in Sources */,
+				68B325C924A9297C00B90F24 /* Project.swift in Sources */,
 				68B325AF24A7DAD700B90F24 /* Injected.swift in Sources */,
 				68B3259524A7B9B300B90F24 /* LoginView.swift in Sources */,
+				68B325D224A934BA00B90F24 /* ProjectRepository.swift in Sources */,
 				68B325B524A7F6B900B90F24 /* ActivityIndicator.swift in Sources */,
 				68B325A224A7D13F00B90F24 /* Font+Extensions.swift in Sources */,
 				68B325A424A7D57500B90F24 /* View+Extensions.swift in Sources */,
+				68B325D424A93D3800B90F24 /* Team.swift in Sources */,
 				68B325C024A9084400B90F24 /* ProjectRowView.swift in Sources */,
 				68B325C424A90C0B00B90F24 /* LottieView.swift in Sources */,
 				68B3255F24A79C8E00B90F24 /* RootView.swift in Sources */,
 				68B325BB24A8F61D00B90F24 /* DashboardView.swift in Sources */,
+				68B325CD24A92DEB00B90F24 /* Status.swift in Sources */,
+				68B325DA24A94EA900B90F24 /* Alias.swift in Sources */,
 				68B325B124A7DAF600B90F24 /* AppContainer.swift in Sources */,
 				68B325A924A7D8D900B90F24 /* LoginViewModel.swift in Sources */,
+				68B325D824A94B8700B90F24 /* MuseUser.swift in Sources */,
 				68B325B324A7EE7200B90F24 /* SignupView.swift in Sources */,
 				68B325C724A90C1300B90F24 /* RoundedCorner.swift in Sources */,
+				68B325CB24A92BEE00B90F24 /* Task.swift in Sources */,
 				68B325AC24A7DA0800B90F24 /* AuthenticationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

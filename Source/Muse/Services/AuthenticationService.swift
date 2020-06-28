@@ -22,29 +22,10 @@ enum AuthenticationError: Error {
   // FIRAuthErrorCodeInternalError  Indicates an internal error occurred. Please report the error with the entire NSError object.
 }
 
-//class BaseAuthenticationService {
-//
-//}
-//
-//
-//protocol AuthenticationService: BaseAuthenticationService {
-//  func registerUser(
-//    withEmail email: String,
-//    password: String,
-//    completion: @escaping (Result<Void, AuthenticationError>) -> Void
-//  )
-//
-//  func signIn(
-//    withEmail email: String,
-//    password: String,
-//    completion: @escaping (Result<Void, AuthenticationError>) -> Void
-//  )
-//
-//  func signOut(completion: @escaping (Result<Void, AuthenticationError>) -> Void)
-//}
-
 class AuthenticationService: ObservableObject  {
+  @Published var user: FirebaseUser?
   @Published var isLoggedIn = false
+  
   private var handle: AuthStateDidChangeListenerHandle?
   
   init() {
@@ -106,6 +87,8 @@ class AuthenticationService: ObservableObject  {
     }
     
     self.handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+      self.user = user
+      
       if user != nil {
         print("auth state changed - logged in")
         self.isLoggedIn = true

@@ -20,6 +20,11 @@ struct ProjectsView: View {
           ProjectRowView()
           ProjectRowView()
         }.navigationBarTitle("Projects")
+        .navigationBarItems(trailing:
+          Button("Create") {
+            print("Create tapped!")
+          }
+        )
       }
     }
   }
