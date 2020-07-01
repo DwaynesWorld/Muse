@@ -15,9 +15,18 @@ struct MuseUser: Codable, Identifiable {
   @ServerTimestamp var createdTime: Timestamp?
   
   var userId: String
-  var firstName: String
   var email: String
+  var firstName: String
+  var lastName: String
   var avatar: String?
   var teams: [String]
   var currentTeamId: String?
+  
+  init(userId: String, email: String, firstName: String, lastName: String) {
+    self.userId = userId
+    self.email = email
+    self.firstName = firstName
+    self.lastName = lastName
+    self.teams = []
+  }
 }

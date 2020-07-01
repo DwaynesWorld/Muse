@@ -15,8 +15,8 @@ class BaseUserService {
 }
 
 protocol UserService: BaseUserService {
-  func create(_ user: MuseUser)
-  func update(_ user: MuseUser)
+  func create(_ user: inout MuseUser) throws
+  func update(_ user: inout MuseUser) throws
 }
 
 class FirestoreUserService: BaseUserService, UserService, ObservableObject  {
@@ -40,13 +40,17 @@ class FirestoreUserService: BaseUserService, UserService, ObservableObject  {
       .store(in: &cancellables)
   }
   
-  func create(_ user: MuseUser) throws {
+  func create(_ user: inout MuseUser) throws {
     guard user.id == nil else { return }
     
-    try collection.document().setData(from: user)
+    let ref = collection.document()
+    
+    user.id = ref.documentID
+    
+    try ref.setData(from: user)
   }
   
-  func update(_ user: MuseUser) throws {
+  func update(_ user: inout MuseUser) throws {
     guard let id = user.id else { return }
     
     try collection.document(id).setData(from: user)

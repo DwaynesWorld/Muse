@@ -17,8 +17,8 @@ class BaseProjectService {
 protocol ProjectService: BaseProjectService {
   func getAll() -> [Project]
   func getBy(id: String) -> Project?
-  func add(_ project: Project)
-  func update(_ project: Project)
+  func create(_ project: inout Project) throws
+  func update(_ project: inout Project) throws
   func delete(id: String)
 }
 
@@ -72,20 +72,43 @@ class FirestoreProjectService: BaseProjectService, ProjectService, ObservableObj
     self.projects.first { $0.id == id }
   }
   
-  func add(_ project: inout Project) throws {
-    guard let teamId = self.teamId else { return }
-  
+  func create(_ project: inout Project) throws {
+    guard let teamId = self.teamId else {
+      print("Required field is nil: teamId")
+      return
+    }
+
+    guard project.id == nil else {
+      print("Project Id field has been initialized")
+      return
+    }
+    
+    let ref = collection.document()
+    
+    project.id = ref.documentID
     project.teamId = teamId
     
-    try collection.document().setData(from: project)
+    try ref.setData(from: project)
   }
   
-  func update(_ project: Project) throws {
+  func update(_ project: inout Project) throws {
+    guard let teamId = self.teamId else {
+      print("Required field is nil: teamId")
+      return
+    }
     
+    guard let id = project.id else {
+      print("Required field is nil: id")
+      return
+    }
+    
+    project.teamId = teamId
+    
+    try collection.document(id).setData(from: project)
   }
   
   func delete(id: String) {
-    
+    collection.document(id).delete()
   }
 }
 

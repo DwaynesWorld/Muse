@@ -35,7 +35,7 @@ class AuthenticationService: ObservableObject  {
   func registerUser(
     withEmail email: String,
     password: String,
-    completion: @escaping (Result<Void, AuthenticationError>) -> Void
+    completion: @escaping (Result<String, AuthenticationError>) -> Void
   ) {
     Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
       if let error = error {
@@ -46,7 +46,7 @@ class AuthenticationService: ObservableObject  {
       
       guard let user = result?.user else { fatalError() }
       print("Successfully created user: \(user.uid).")
-      completion(.success(()))
+      completion(.success(user.uid))
     }
   }
   

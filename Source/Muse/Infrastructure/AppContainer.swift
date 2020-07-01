@@ -21,6 +21,14 @@ struct AppContainer {
       AuthenticationService()
     }.inObjectScope(.container)
     
+    container.register(UserService.self) { _ in
+      FirestoreUserService()
+    }.inObjectScope(.container)
+    
+    container.register(ProjectService.self) { _ in
+      FirestoreProjectService()
+    }.inObjectScope(.container)
+    
     self.resolver = container.synchronize()
   }
   

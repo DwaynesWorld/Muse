@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct LoginView: View {
-  @ObservedObject var model = LoginViewModel()
+  @ObservedObject var model = RegistrationViewModel()
   @State private var showSignupView = false
 
   #if DEBUG
@@ -43,7 +43,7 @@ struct LoginView: View {
               .font(.footnote)
               .fontWeight(.semibold)
           }.padding(.top, 5)
-        }.sheet(isPresented: self.$showSignupView) { SignupView() }
+        }.sheet(isPresented: self.$showSignupView) { SignupView(model: self.model) }
         
         VStack {
           HStack {
