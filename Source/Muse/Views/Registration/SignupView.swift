@@ -33,40 +33,43 @@ struct SignupView: View {
       Text("New Account")
         .font(.title)
         .fontWeight(.heavy)
+        .padding(.bottom, 20)
       
-      if page == 0 {
-        LabeledTextField(
-          label: "Email",
-          disabled: self.model.isSigningUp,
-          text: $email
-        ).padding(.top, textFieldPadding)
+      Group {
+        if page == 0 {
+          LabeledTextField(
+            label: "Email",
+            disabled: self.model.isSigningUp,
+            text: $email
+          )
+          
+          LabeledSecureField(
+            label: "Password",
+            disabled: self.model.isSigningUp,
+            text: $password
+          )
+          
+          LabeledSecureField(
+            label: "Confirm Password",
+            disabled: self.model.isSigningUp,
+            text: $confirmPassword
+          )
+        }
         
-        LabeledSecureField(
-          label: "Password",
-          disabled: self.model.isSigningUp,
-          text: $password
-        ).padding(.top, textFieldPadding)
-        
-        LabeledSecureField(
-          label: "Confirm Password",
-          disabled: self.model.isSigningUp,
-          text: $confirmPassword
-        ).padding(.top, textFieldPadding)
-      }
-      
-      if page == 1 {
-        LabeledTextField(
-          label: "First Name",
-          disabled: self.model.isSigningUp,
-          text: $firstName
-        ).padding(.top, 40)
-        
-        LabeledTextField(
-          label: "Last Name",
-          disabled: self.model.isSigningUp,
-          text: $lastName
-        ).padding(.top, textFieldPadding)
-      }
+        if page == 1 {
+          LabeledTextField(
+            label: "First Name",
+            disabled: self.model.isSigningUp,
+            text: $firstName
+          )
+          
+          LabeledTextField(
+            label: "Last Name",
+            disabled: self.model.isSigningUp,
+            text: $lastName
+          )
+        }
+      }.padding(.top, 20)
       
       HStack {
         Spacer()

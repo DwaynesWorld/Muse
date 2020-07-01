@@ -1,5 +1,5 @@
 //
-//  LabeledSecureField.swift
+//  LabeledTextField.swift
 //  Muse
 //
 //  Created by Kyle Thompson on 6/30/20.
@@ -8,18 +8,18 @@
 
 import SwiftUI
 
-struct LabeledSecureField: View {
+struct LabeledTextField: View {
   var label: String
   var disabled: Bool
   @Binding var text: String
   
   var body: some View {
-    VStack(alignment: .leading) {
+    VStack(alignment: .leading, spacing: 5) {
       Text(label.uppercased())
         .font(.footnote)
         .foregroundColor(.secondary)
       
-      SecureField("", text: $text)
+      TextField("", text: $text)
         .autocapitalization(.sentences)
         .keyboardType(.default)
         .disabled(disabled)
@@ -29,14 +29,14 @@ struct LabeledSecureField: View {
   }
 }
 
-struct LabeledSecureField_Previews: PreviewProvider {
-    static var previews: some View {
-      VStack {
-        LabeledSecureField(
-          label: "Last Name",
-          disabled: false,
-          text: .constant("Somthing")
-        )
-      }.padding()
-    }
+struct LabeledTextField_Previews: PreviewProvider {
+  static var previews: some View {
+    VStack {
+      LabeledTextField(
+        label: "Last Name",
+        disabled: false,
+        text: .constant("Somthing")
+      )
+    }.padding()
+  }
 }

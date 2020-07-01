@@ -9,21 +9,21 @@
 import SwiftUI
 
 struct RootView: View {
-  @ObservedObject private var authenticationService: AuthenticationService
-
-  init() {
-    self.authenticationService = AppContainer.default.resolve(AuthenticationService.self)!
-  }
+  @ObservedObject var model = RootViewModel()
   
   var body: some View {
     Group {
-      if self.authenticationService.isLoggedIn {
-        MainView()
-      } else {
-        LoginView()
-      }
+      innerRootView()
     }.onAppear {
-      self.authenticationService.signOut { _ in } 
+      self.model.signout()
+    }
+  }
+  
+  func innerRootView() -> AnyView {
+    switch (self.model.isLoggedIn, self.model.onboardingComplete) {
+    case (true, true): return AnyView(MainView())
+    case (true, false): return AnyView(OnboardingView())
+    default: return AnyView(LoginView())
     }
   }
 }

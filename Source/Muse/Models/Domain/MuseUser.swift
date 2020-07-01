@@ -21,6 +21,8 @@ struct MuseUser: Codable, Identifiable {
   var avatar: String?
   var teams: [String]
   var currentTeamId: String?
+  var onboardingCompleted: Bool = false
+  var hasTeam: Bool { teams.count > 0 }
   
   init(userId: String, email: String, firstName: String, lastName: String) {
     self.userId = userId

@@ -110,5 +110,9 @@ class FirestoreProjectService: BaseProjectService, ProjectService, ObservableObj
   func delete(id: String) {
     collection.document(id).delete()
   }
+  
+  deinit {
+    cancellables.forEach { $0.cancel() }
+  }
 }
 

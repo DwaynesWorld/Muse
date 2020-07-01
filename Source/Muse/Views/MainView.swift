@@ -1,0 +1,63 @@
+//
+//  MainView.swift
+//  Muse
+//
+//  Created by Kyle Thompson on 6/27/20.
+//  Copyright © 2020 Kyle Thompson. All rights reserved.
+//
+
+import SwiftUI
+
+struct MainView: View {
+  @ObservedObject var model = MainViewModel()
+  @State var selectedTab = 1
+  @State var showCreateTeamModal = false
+  
+  var body: some View {
+    VStack {
+      TabView(selection: $selectedTab) {
+        DashboardView()
+          .tabItem {
+            Image(systemName: selectedTab == 0 ? "house.fill" : "house")
+            Text("Dashboard")
+        }.tag(0)
+        
+        ProjectsView()
+          .tabItem {
+            Image(systemName:  selectedTab == 1 ? "tray.full.fill" : "tray.full")
+            Text("Projects")
+        }.tag(1)
+        
+        Text("Analytics")
+          .tabItem {
+            Image(systemName:  selectedTab == 2 ? "chart.bar.fill" : "chart.bar")
+            Text("Analytics")
+        }.tag(2)
+        
+        Text("Settings")
+          .tabItem {
+            Image(systemName: "gear")
+            Text("Settings")
+        }.tag(3)
+      }
+    }
+    .onAppear {
+      self.handleAppear()
+    }
+  }
+  
+  private func handleAppear() {
+    print("somthingss")
+    
+    if !self.model.hasTeam() {
+      print("no team")
+      self.showCreateTeamModal = true
+    }
+  }
+}
+
+struct MainView_Previews: PreviewProvider {
+  static var previews: some View {
+      MainView()
+  }
+}

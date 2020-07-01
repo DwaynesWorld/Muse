@@ -10,7 +10,7 @@ import Foundation
 import Combine
 import FirebaseFirestore
 
-class BaseUserService {
+class BaseUserService: ObservableObject {
   @Published var user: MuseUser?
 }
 
@@ -19,7 +19,7 @@ protocol UserService: BaseUserService {
   func update(_ user: inout MuseUser) throws
 }
 
-class FirestoreUserService: BaseUserService, UserService, ObservableObject  {
+class FirestoreUserService: BaseUserService, UserService  {
   @Injected var authenticationService: AuthenticationService
   
   lazy private var collection = Firestore.firestore().collection("users")
@@ -59,7 +59,7 @@ class FirestoreUserService: BaseUserService, UserService, ObservableObject  {
   private func load() {
     guard let userId = self.userId else { return }
     
-    collection.whereField("userId", isEqualTo: userId)
+    collection.document(userId)
       .addSnapshotListener { (snapshot, error) in
         if let error = error  {
           print(error.localizedDescription)
@@ -70,10 +70,12 @@ class FirestoreUserService: BaseUserService, UserService, ObservableObject  {
           fatalError("Invalid snapshot listener result.")
         }
         
-        self.user = snapshot.documents.compactMap { document -> MuseUser? in
-          try? document.data(as: MuseUser.self)
-        }.first
+        self.user = try? snapshot.data(as: MuseUser.self)
     }
+  }
+  
+  deinit {
+    cancellables.forEach { $0.cancel() }
   }
 }
 

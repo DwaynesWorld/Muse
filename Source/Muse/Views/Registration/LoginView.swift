@@ -13,7 +13,7 @@ struct LoginView: View {
   @State private var showSignupView = false
 
   #if DEBUG
-  @State var email: String = "k@t.com"
+  @State var email: String = "john.doe@example.com"
   @State var password: String = "123456"
   #else
   @State var email: String = ""
