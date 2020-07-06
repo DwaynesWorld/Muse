@@ -12,8 +12,8 @@ struct GettingStartedView: View {
   var body: some View {
     VStack(alignment: .leading) {
       // TODO: Get lottie loading animation
-      LoadingView()
-    }.padding()
+      Text("Something")
+    }
   }
 }
 

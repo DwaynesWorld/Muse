@@ -12,12 +12,25 @@ struct PageViewContainer<Page: View, Destination: View>: View {
   @State var currentPage = 0
   @State var direction: UIPageViewController.NavigationDirection  = .forward
   @State var getStarted = false
+  @State var skip = false
   
   var viewControllers: [UIHostingController<Page>]
   var endDestination: Destination
   
   var body: some View {
     VStack {
+      HStack {
+        Spacer()
+        
+        NavigationLink(destination: endDestination, isActive: self.$skip) {
+          Button(action: self.onSkip) {
+            Text("Skip")
+              .foregroundColor(.accentColor)
+              .padding()
+          }
+        }
+      }
+      
       PageViewController(
         controllers: viewControllers,
         currentPage: self.$currentPage,
@@ -40,7 +53,14 @@ struct PageViewContainer<Page: View, Destination: View>: View {
         .cornerRadius(10)
         .padding(.top, 25)
       }
-    }.gesture(DragGesture().onEnded(self.onDragEnded))
+    }
+    .navigationBarTitle("", displayMode: .inline)
+    .navigationBarHidden(true)
+    .gesture(DragGesture().onEnded(self.onDragEnded))
+  }
+  
+  func onSkip() {
+    self.skip = true
   }
   
   func onNext() {
@@ -53,8 +73,11 @@ struct PageViewContainer<Page: View, Destination: View>: View {
   }
   
   func onDragEnded(gesture: DragGesture.Value) {
+    let dragThreshold: CGFloat = 5
     let start = gesture.startLocation.x
     let end = gesture.location.x
+    
+    guard abs(start - end) > dragThreshold else { return }
     
     if start < end {
       if self.currentPage > 0 {
@@ -90,6 +113,8 @@ struct PageViewContainer_Previews: PreviewProvider {
       UIHostingController(rootView: PageView(page: $0))
     }
     
-    return PageViewContainer(viewControllers: controllers, endDestination: OnboardingView())
+    return NavigationView {
+      PageViewContainer(viewControllers: controllers, endDestination: OnboardingView())
+    }
   }
 }
