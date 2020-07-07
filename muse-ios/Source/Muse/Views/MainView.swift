@@ -11,7 +11,6 @@ import SwiftUI
 struct MainView: View {
   @ObservedObject var model = MainViewModel()
   @State var selectedTab = 1
-  @State var showCreateTeamModal = false
   
   var body: some View {
     VStack {
@@ -40,18 +39,6 @@ struct MainView: View {
             Text("Settings")
         }.tag(3)
       }
-    }
-    .onAppear {
-      self.handleAppear()
-    }
-  }
-  
-  private func handleAppear() {
-    print("somthingss")
-    
-    if !self.model.hasTeam() {
-      print("no team")
-      self.showCreateTeamModal = true
     }
   }
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		33D7482EC2E65D794F6C9AB1 /* Pods_MuseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD099FBFA537BFD739493084 /* Pods_MuseTests.framework */; };
 		62458F6D36AB78009F4EAEE9 /* Pods_Muse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE2708184AD095C7ACBAE35 /* Pods_Muse.framework */; };
+		68AF322424B3F29C005E1829 /* GettingStartedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AF322324B3F29C005E1829 /* GettingStartedViewModel.swift */; };
 		68B3255B24A79C8E00B90F24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B3255A24A79C8E00B90F24 /* AppDelegate.swift */; };
 		68B3255D24A79C8E00B90F24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B3255C24A79C8E00B90F24 /* SceneDelegate.swift */; };
 		68B3255F24A79C8E00B90F24 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B3255E24A79C8E00B90F24 /* RootView.swift */; };
@@ -81,6 +82,7 @@
 		29DCD465BF7B8FADBFD7D685 /* Pods-Muse-MuseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Muse-MuseUITests.debug.xcconfig"; path = "Target Support Files/Pods-Muse-MuseUITests/Pods-Muse-MuseUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3E57C314BD4480B929999C91 /* Pods-Muse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Muse.debug.xcconfig"; path = "Target Support Files/Pods-Muse/Pods-Muse.debug.xcconfig"; sourceTree = "<group>"; };
 		64EE552502BB4E0367C708A2 /* Pods-MuseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuseTests.release.xcconfig"; path = "Target Support Files/Pods-MuseTests/Pods-MuseTests.release.xcconfig"; sourceTree = "<group>"; };
+		68AF322324B3F29C005E1829 /* GettingStartedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettingStartedViewModel.swift; sourceTree = "<group>"; };
 		68B3255724A79C8E00B90F24 /* Muse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Muse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68B3255A24A79C8E00B90F24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68B3255C24A79C8E00B90F24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 				68B325CE24A932C800B90F24 /* ProjectsViewModel.swift */,
 				68B47CDA24ACD6A600D6C948 /* MainViewModel.swift */,
 				68B47CDE24ACFAE000D6C948 /* RootViewModel.swift */,
+				68AF322324B3F29C005E1829 /* GettingStartedViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -726,6 +729,7 @@
 				68B47CE224AD284100D6C948 /* PageViewController.swift in Sources */,
 				68B325B124A7DAF600B90F24 /* AppContainer.swift in Sources */,
 				68B325A924A7D8D900B90F24 /* RegistrationViewModel.swift in Sources */,
+				68AF322424B3F29C005E1829 /* GettingStartedViewModel.swift in Sources */,
 				68B325D824A94B8700B90F24 /* MuseUser.swift in Sources */,
 				68B325B324A7EE7200B90F24 /* SignupView.swift in Sources */,
 				68B325C724A90C1300B90F24 /* RoundedCorner.swift in Sources */,

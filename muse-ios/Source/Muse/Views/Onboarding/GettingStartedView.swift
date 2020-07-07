@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct GettingStartedView: View {
+  @ObservedObject var model = GettingStartedViewModel()
+  
   var body: some View {
     VStack(alignment: .leading) {
       // TODO: Get lottie loading animation

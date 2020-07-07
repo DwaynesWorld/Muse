@@ -11,6 +11,7 @@ import SwiftUI
 struct OnboardingView: View {
   @State var showGetStarted = false
   
+  
   let pages = [
     Page(id: UUID(), image: "process", heading: "Manage Projects", subSubheading: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."),
     Page(id: UUID(), image: "schedule", heading: "Track Tasks", subSubheading: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."),
@@ -20,12 +21,20 @@ struct OnboardingView: View {
   ]
   
   var body: some View {
-    NavigationView {
-      PageViewContainer(
-        viewControllers: self.getControllers(),
-        endDestination: GettingStartedView()
-      )
+    Group {
+      if showGetStarted {
+        GettingStartedView()
+      } else {
+        PageViewContainer(
+          viewControllers: self.getControllers(),
+          onComplete: self.onComplete
+        )
+      }
     }
+  }
+  
+  func onComplete() {
+    self.showGetStarted.toggle()
   }
   
   func getControllers() -> [UIHostingController<PageView>] {

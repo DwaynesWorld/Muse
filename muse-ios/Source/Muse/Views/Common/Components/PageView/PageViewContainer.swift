@@ -8,26 +8,21 @@
 
 import SwiftUI
 
-struct PageViewContainer<Page: View, Destination: View>: View {
+struct PageViewContainer<Page: View>: View {
   @State var currentPage = 0
   @State var direction: UIPageViewController.NavigationDirection  = .forward
-  @State var getStarted = false
-  @State var skip = false
   
   var viewControllers: [UIHostingController<Page>]
-  var endDestination: Destination
+  var onComplete: () -> Void
   
   var body: some View {
     VStack {
       HStack {
         Spacer()
-        
-        NavigationLink(destination: endDestination, isActive: self.$skip) {
-          Button(action: self.onSkip) {
-            Text("Skip")
-              .foregroundColor(.accentColor)
-              .padding()
-          }
+        Button(action: self.onComplete) {
+          Text("Skip")
+            .foregroundColor(.accentColor)
+            .padding()
         }
       }
       
@@ -42,25 +37,17 @@ struct PageViewContainer<Page: View, Destination: View>: View {
         count: viewControllers.count
       )
       
-      NavigationLink(destination: endDestination, isActive: self.$getStarted) {
-        Button(action: self.onNext) {
-          Text(self.getButtonText())
-            .frame(width: 200, height: 20, alignment: .center)
-            .padding()
-        }
-        .foregroundColor(.white)
-        .background(Color.blue)
-        .cornerRadius(10)
-        .padding(.top, 25)
+      Button(action: self.onNext) {
+        Text(self.getButtonText())
+          .frame(width: 200, height: 20, alignment: .center)
+          .padding()
       }
+      .foregroundColor(.white)
+      .background(Color.blue)
+      .cornerRadius(10)
+      .padding(.top, 25)
     }
-    .navigationBarTitle("", displayMode: .inline)
-    .navigationBarHidden(true)
     .gesture(DragGesture().onEnded(self.onDragEnded))
-  }
-  
-  func onSkip() {
-    self.skip = true
   }
   
   func onNext() {
@@ -68,7 +55,7 @@ struct PageViewContainer<Page: View, Destination: View>: View {
       self.currentPage += 1
       self.direction = .forward
     } else {
-      self.getStarted = true
+      self.onComplete()
     }
   }
   
@@ -113,8 +100,6 @@ struct PageViewContainer_Previews: PreviewProvider {
       UIHostingController(rootView: PageView(page: $0))
     }
     
-    return NavigationView {
-      PageViewContainer(viewControllers: controllers, endDestination: OnboardingView())
-    }
+    return PageViewContainer(viewControllers: controllers, onComplete: {})
   }
 }
