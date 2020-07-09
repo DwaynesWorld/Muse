@@ -29,6 +29,10 @@ struct AppContainer {
       FirestoreProjectService()
     }.inObjectScope(.container)
     
+    container.register(TeamService.self) { _ in
+      FirestoreTeamService()
+    }.inObjectScope(.container)
+    
     self.resolver = container.synchronize()
   }
   

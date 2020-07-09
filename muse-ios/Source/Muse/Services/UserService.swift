@@ -10,7 +10,7 @@ import Foundation
 import Combine
 import FirebaseFirestore
 
-class BaseUserService: ObservableObject {
+class BaseUserService: BaseService {
   @Published var user: MuseUser?
 }
 
@@ -23,7 +23,6 @@ class FirestoreUserService: BaseUserService, UserService  {
   @Injected var authenticationService: AuthenticationService
   
   lazy private var collection = Firestore.firestore().collection("users")
-  private var cancellables = Set<AnyCancellable>()
   private var userId: String?
   
   override init() {
@@ -59,7 +58,7 @@ class FirestoreUserService: BaseUserService, UserService  {
   private func load() {
     guard let userId = self.userId else { return }
     
-    collection.document(userId)
+    collection.whereField("userId", isEqualTo: userId)
       .addSnapshotListener { (snapshot, error) in
         if let error = error  {
           print(error.localizedDescription)
@@ -70,12 +69,10 @@ class FirestoreUserService: BaseUserService, UserService  {
           fatalError("Invalid snapshot listener result.")
         }
         
-        self.user = try? snapshot.data(as: MuseUser.self)
+        self.user = snapshot.documents.compactMap {
+          try? $0.data(as: MuseUser.self)
+        }.first
     }
-  }
-  
-  deinit {
-    cancellables.forEach { $0.cancel() }
   }
 }
 

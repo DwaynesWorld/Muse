@@ -10,6 +10,10 @@
 		33D7482EC2E65D794F6C9AB1 /* Pods_MuseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD099FBFA537BFD739493084 /* Pods_MuseTests.framework */; };
 		62458F6D36AB78009F4EAEE9 /* Pods_Muse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE2708184AD095C7ACBAE35 /* Pods_Muse.framework */; };
 		68AF322424B3F29C005E1829 /* GettingStartedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AF322324B3F29C005E1829 /* GettingStartedViewModel.swift */; };
+		68AF322824B6705E005E1829 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 68AF322624B6705E005E1829 /* loading.json */; };
+		68AF322924B6705E005E1829 /* loading2.json in Resources */ = {isa = PBXBuildFile; fileRef = 68AF322724B6705E005E1829 /* loading2.json */; };
+		68AF322B24B683D0005E1829 /* TeamService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AF322A24B683D0005E1829 /* TeamService.swift */; };
+		68AF322D24B68417005E1829 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AF322C24B68417005E1829 /* BaseService.swift */; };
 		68B3255B24A79C8E00B90F24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B3255A24A79C8E00B90F24 /* AppDelegate.swift */; };
 		68B3255D24A79C8E00B90F24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B3255C24A79C8E00B90F24 /* SceneDelegate.swift */; };
 		68B3255F24A79C8E00B90F24 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B3255E24A79C8E00B90F24 /* RootView.swift */; };
@@ -41,7 +45,7 @@
 		68B325CB24A92BEE00B90F24 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B325CA24A92BEE00B90F24 /* Task.swift */; };
 		68B325CD24A92DEB00B90F24 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B325CC24A92DEB00B90F24 /* Status.swift */; };
 		68B325CF24A932C800B90F24 /* ProjectsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B325CE24A932C800B90F24 /* ProjectsViewModel.swift */; };
-		68B325D224A934BA00B90F24 /* ProjectRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B325D124A934BA00B90F24 /* ProjectRepository.swift */; };
+		68B325D224A934BA00B90F24 /* ProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B325D124A934BA00B90F24 /* ProjectService.swift */; };
 		68B325D424A93D3800B90F24 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B325D324A93D3800B90F24 /* Team.swift */; };
 		68B325D624A9498A00B90F24 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B325D524A9498A00B90F24 /* UserService.swift */; };
 		68B325D824A94B8700B90F24 /* MuseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B325D724A94B8700B90F24 /* MuseUser.swift */; };
@@ -83,6 +87,10 @@
 		3E57C314BD4480B929999C91 /* Pods-Muse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Muse.debug.xcconfig"; path = "Target Support Files/Pods-Muse/Pods-Muse.debug.xcconfig"; sourceTree = "<group>"; };
 		64EE552502BB4E0367C708A2 /* Pods-MuseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuseTests.release.xcconfig"; path = "Target Support Files/Pods-MuseTests/Pods-MuseTests.release.xcconfig"; sourceTree = "<group>"; };
 		68AF322324B3F29C005E1829 /* GettingStartedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettingStartedViewModel.swift; sourceTree = "<group>"; };
+		68AF322624B6705E005E1829 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		68AF322724B6705E005E1829 /* loading2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading2.json; sourceTree = "<group>"; };
+		68AF322A24B683D0005E1829 /* TeamService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamService.swift; sourceTree = "<group>"; };
+		68AF322C24B68417005E1829 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		68B3255724A79C8E00B90F24 /* Muse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Muse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68B3255A24A79C8E00B90F24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68B3255C24A79C8E00B90F24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,7 +128,7 @@
 		68B325CA24A92BEE00B90F24 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		68B325CC24A92DEB00B90F24 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		68B325CE24A932C800B90F24 /* ProjectsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewModel.swift; sourceTree = "<group>"; };
-		68B325D124A934BA00B90F24 /* ProjectRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectRepository.swift; sourceTree = "<group>"; };
+		68B325D124A934BA00B90F24 /* ProjectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectService.swift; sourceTree = "<group>"; };
 		68B325D324A93D3800B90F24 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		68B325D524A9498A00B90F24 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		68B325D724A94B8700B90F24 /* MuseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseUser.swift; sourceTree = "<group>"; };
@@ -169,6 +177,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		68AF322524B6705E005E1829 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				68AF322624B6705E005E1829 /* loading.json */,
+				68AF322724B6705E005E1829 /* loading2.json */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 		68B3254E24A79C8E00B90F24 = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +252,7 @@
 		68B3258D24A7B2E800B90F24 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				68AF322524B6705E005E1829 /* Animations */,
 				68B3259A24A7D0A300B90F24 /* Fonts */,
 				68B3256024A79C8F00B90F24 /* Assets.xcassets */,
 				68B3256324A79C8F00B90F24 /* Preview Assets.xcassets */,
@@ -352,9 +370,11 @@
 		68B325AA24A7D9B500B90F24 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				68AF322C24B68417005E1829 /* BaseService.swift */,
 				68B325AB24A7DA0800B90F24 /* AuthenticationService.swift */,
 				68B325D524A9498A00B90F24 /* UserService.swift */,
-				68B325D124A934BA00B90F24 /* ProjectRepository.swift */,
+				68AF322A24B683D0005E1829 /* TeamService.swift */,
+				68B325D124A934BA00B90F24 /* ProjectService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -551,6 +571,8 @@
 				68B3259E24A7D0C300B90F24 /* Library-Soft.otf in Resources */,
 				68B3258F24A7B38200B90F24 /* LaunchScreen.storyboard in Resources */,
 				68B3259224A7B51B00B90F24 /* GoogleService-Info.plist in Resources */,
+				68AF322824B6705E005E1829 /* loading.json in Resources */,
+				68AF322924B6705E005E1829 /* loading2.json in Resources */,
 				68B3256424A79C8F00B90F24 /* Preview Assets.xcassets in Resources */,
 				68B3256124A79C8F00B90F24 /* Assets.xcassets in Resources */,
 			);
@@ -709,7 +731,8 @@
 				68B325C924A9297C00B90F24 /* Project.swift in Sources */,
 				68B325AF24A7DAD700B90F24 /* Injected.swift in Sources */,
 				68B3259524A7B9B300B90F24 /* LoginView.swift in Sources */,
-				68B325D224A934BA00B90F24 /* ProjectRepository.swift in Sources */,
+				68AF322B24B683D0005E1829 /* TeamService.swift in Sources */,
+				68B325D224A934BA00B90F24 /* ProjectService.swift in Sources */,
 				68B325B524A7F6B900B90F24 /* ActivityIndicator.swift in Sources */,
 				68B47CDD24ACF9C600D6C948 /* OnboardingView.swift in Sources */,
 				68B325A224A7D13F00B90F24 /* Font+Extensions.swift in Sources */,
@@ -724,6 +747,7 @@
 				68B3255F24A79C8E00B90F24 /* RootView.swift in Sources */,
 				68B47CD924AC0BD500D6C948 /* LabeledSecureField.swift in Sources */,
 				68B325BB24A8F61D00B90F24 /* DashboardView.swift in Sources */,
+				68AF322D24B68417005E1829 /* BaseService.swift in Sources */,
 				68B325CD24A92DEB00B90F24 /* Status.swift in Sources */,
 				68B325DA24A94EA900B90F24 /* Alias.swift in Sources */,
 				68B47CE224AD284100D6C948 /* PageViewController.swift in Sources */,

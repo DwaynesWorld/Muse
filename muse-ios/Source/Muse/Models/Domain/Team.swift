@@ -18,4 +18,11 @@ struct Team: Codable, Identifiable {
   var name: String
   var description: String
   var members: [String]
+  
+  init(ownerId: String, name: String, description: String, members: [String]) {
+    self.ownerId = ownerId
+    self.name = name
+    self.description = description
+    self.members = members
+  }
 }

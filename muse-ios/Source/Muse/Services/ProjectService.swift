@@ -1,5 +1,5 @@
 //
-//  ProjectRepository.swift
+//  ProjectService.swift
 //  Muse
 //
 //  Created by Kyle Thompson on 6/28/20.
@@ -11,7 +11,7 @@ import Combine
 import FirebaseFirestore
 
 class BaseProjectService {
-  @Published var projects = [Project]()
+  @Published var projects: [Project] = []
 }
 
 protocol ProjectService: BaseProjectService {
