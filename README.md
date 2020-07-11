@@ -2,6 +2,6 @@
 
 # Muse
 
- ![Swift](https://img.shields.io/badge/swift-5.1-brightgreen.svg) ![Xcode 12.0 Beta 2](https://img.shields.io/badge/Xcode-12.0-beta.2%2B-blue.svg) ![iOS 14.0 Beta 2](https://img.shields.io/badge/iOS-14.0-beta.2%2B-blue.svg)
+ ![Swift](https://img.shields.io/badge/swift-5.1-brightgreen.svg) ![Xcode](https://img.shields.io/badge/Xcode-12.0%2B-blue.svg) ![iOS](https://img.shields.io/badge/iOS-14.0%2B-blue.svg)
 
 Muse™ is a project tracking tool for people on the go! Built for high-performance & mobile teams. 
