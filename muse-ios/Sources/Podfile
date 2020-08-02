@@ -8,7 +8,7 @@ target 'Muse' do
   
   # Pods for Muse
   pod 'lottie-ios'
-  pod 'Swinject'
+  pod "Resolver"
 
   # Pods for Muse - Firebase
   pod 'Firebase/Analytics'

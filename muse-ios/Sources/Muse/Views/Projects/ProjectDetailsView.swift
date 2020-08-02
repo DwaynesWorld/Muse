@@ -9,13 +9,17 @@
 import SwiftUI
 
 struct ProjectDetailsView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+  var project: Project
+  
+  var body: some View {
+    Text(project.name)
+  }
 }
 
+#if DEBUG
 struct ProjectDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProjectDetailsView()
-    }
+  static var previews: some View {
+    ProjectDetailsView(project: testProject)
+  }
 }
+#endif

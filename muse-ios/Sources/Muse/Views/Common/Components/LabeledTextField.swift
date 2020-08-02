@@ -18,17 +18,16 @@ struct LabeledTextField: View {
       Text(label.uppercased())
         .font(.footnote)
         .foregroundColor(.secondary)
-      
       TextField("", text: $text)
         .autocapitalization(.sentences)
         .keyboardType(.default)
         .disabled(disabled)
-      
       Divider()
     }
   }
 }
 
+#if DEBUG
 struct LabeledTextField_Previews: PreviewProvider {
   static var previews: some View {
     VStack {
@@ -40,3 +39,4 @@ struct LabeledTextField_Previews: PreviewProvider {
     }.padding()
   }
 }
+#endif

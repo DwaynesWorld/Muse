@@ -13,54 +13,35 @@ struct ProjectRowView: View {
   var project: Project
   
   var body: some View {
-    HStack(spacing: 10) {
+    HStack(alignment: .top, spacing: 10) {
       Circle()
         .foregroundColor(.blue)
-        .frame(width: 40, height: 40, alignment: .center)
-      
+        .frame(width: 30, height: 30, alignment: .center)
       VStack(alignment: .leading) {
         Text(project.name)
           .font(.headline)
-        
         Text(project.description)
           .font(.footnote)
           .foregroundColor(.secondary)
-          .lineLimit(2)
+          .lineLimit(3)
+          .padding(.top, 5)
       }
-      
       Spacer()
     }.padding(.vertical, 5)
   }
 }
 
+#if DEBUG
 struct ProjectRowView_Previews: PreviewProvider {
   static var previews: some View {
-    let project = Project(
-      id: UUID().uuidString,
-      createdTime: Timestamp(),
-      teamId: UUID().uuidString,
-      name: "Houston Waterworks",
-      description: "Building a new tree house for the Houston Waterworks playground",
-      status: .notStarted,
-      startDate: Date(timeIntervalSinceNow: TimeInterval(exactly: -300)!),
-      endDate: Date(timeIntervalSinceNow: TimeInterval(exactly: 300)!),
-      location: "",
-      icon: ""
-    )
-    
-    return VStack {
+    VStack {
       List {
-        ProjectRowView(project: project)
-        ProjectRowView(project: project)
-        ProjectRowView(project: project)
+        ProjectRowView(project: testProject)
+        ProjectRowView(project: testProject)
+        ProjectRowView(project: testProject)
       }
       .listStyle(DefaultListStyle())
-//      .listStyle(GroupedListStyle())
-//      .listStyle(InsetGroupedListStyle())
-//      .listStyle(InsetListStyle())
-//      .listStyle(PlainListStyle())
-//      .listStyle(SidebarListStyle())
-      
     }.preferredColorScheme(.dark)
   }
 }
+#endif

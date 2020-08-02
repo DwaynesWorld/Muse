@@ -17,7 +17,7 @@ struct ProjectsView: View {
       VStack(alignment: .leading) {
         if self.model.projects.count > 0 {
           List(self.model.projects, id: \.id) { project in
-            NavigationLink(destination: Text("Destination")) {
+            NavigationLink(destination: ProjectDetailsView(project: project)) {
               ProjectRowView(project: project)
             }
           }.listStyle(InsetGroupedListStyle())
@@ -38,8 +38,10 @@ struct ProjectsView: View {
   }
 }
 
+#if DEBUG
 struct ProjectsView_Previews: PreviewProvider {
   static var previews: some View {
     ProjectsView()
   }
 }
+#endif

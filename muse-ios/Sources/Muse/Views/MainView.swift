@@ -20,19 +20,16 @@ struct MainView: View {
             Image(systemName: selectedTab == 0 ? "house.fill" : "house")
             Text("Dashboard")
         }.tag(0)
-        
         ProjectsView()
           .tabItem {
             Image(systemName:  selectedTab == 1 ? "tray.full.fill" : "tray.full")
             Text("Projects")
         }.tag(1)
-        
         Text("Analytics")
           .tabItem {
             Image(systemName:  selectedTab == 2 ? "chart.bar.fill" : "chart.bar")
             Text("Analytics")
         }.tag(2)
-        
         Text("Settings")
           .tabItem {
             Image(systemName: "gear")

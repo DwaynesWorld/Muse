@@ -42,13 +42,11 @@ struct SignupView: View {
             disabled: self.model.isSigningUp,
             text: $email
           )
-          
           LabeledSecureField(
             label: "Password",
             disabled: self.model.isSigningUp,
             text: $password
           )
-          
           LabeledSecureField(
             label: "Confirm Password",
             disabled: self.model.isSigningUp,
@@ -62,7 +60,6 @@ struct SignupView: View {
             disabled: self.model.isSigningUp,
             text: $firstName
           )
-          
           LabeledTextField(
             label: "Last Name",
             disabled: self.model.isSigningUp,
@@ -70,10 +67,8 @@ struct SignupView: View {
           )
         }
       }.padding(.top, 20)
-      
       HStack {
         Spacer()
-        
         Button(action: { self.handleClick() }) {
           Text(page == 0 ? "Next" : "Done")
             .frame(width: 200, height: 20, alignment: .center)
@@ -83,10 +78,8 @@ struct SignupView: View {
         .background(Color.blue)
         .cornerRadius(10)
         .padding(.top, 30)
-        
         Spacer()
       }
-
       Spacer()
     }
     .padding(.horizontal, 30)
@@ -108,8 +101,10 @@ struct SignupView: View {
   }
 }
 
+#if DEBUG
 struct SignupView_Previews: PreviewProvider {
   static var previews: some View {
     SignupView(model: RegistrationViewModel())
   }
 }
+#endif

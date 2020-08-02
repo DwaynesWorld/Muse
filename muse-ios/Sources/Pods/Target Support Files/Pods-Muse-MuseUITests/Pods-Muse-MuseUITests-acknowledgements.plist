@@ -3096,9 +3096,9 @@ Fuller's blog&lt;/a&gt;
 		</dict>
 		<dict>
 			<key>FooterText</key>
-			<string>The MIT License (MIT)
+			<string>MIT License
 
-Copyright (c) 2015 Swinject Contributors
+Copyright (c) 2018 Michael Long
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -3121,7 +3121,7 @@ SOFTWARE.
 			<key>License</key>
 			<string>MIT</string>
 			<key>Title</key>
-			<string>Swinject</string>
+			<string>Resolver</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>

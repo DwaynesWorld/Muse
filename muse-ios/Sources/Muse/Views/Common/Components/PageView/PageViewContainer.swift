@@ -25,18 +25,15 @@ struct PageViewContainer<Page: View>: View {
             .padding()
         }
       }
-      
       PageViewController(
         controllers: viewControllers,
         currentPage: self.$currentPage,
         direction: self.$direction
       )
-      
       PageIndicator(
         currentIndex: self.currentPage,
         count: viewControllers.count
       )
-      
       Button(action: self.onNext) {
         Text(self.getButtonText())
           .frame(width: 200, height: 20, alignment: .center)
@@ -86,6 +83,7 @@ struct PageViewContainer<Page: View>: View {
   }
 }
 
+#if DEBUG
 struct PageViewContainer_Previews: PreviewProvider {
   static var previews: some View {
     let pages = [
@@ -138,3 +136,4 @@ struct PageViewContainer_Previews: PreviewProvider {
     return PageViewContainer(viewControllers: controllers, onComplete: {})
   }
 }
+#endif

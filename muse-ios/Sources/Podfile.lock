@@ -342,7 +342,7 @@ PODS:
   - nanopb/encode (1.30905.0)
   - Nimble (8.1.1)
   - PromisesObjC (1.2.9)
-  - Swinject (2.7.1)
+  - Resolver (1.1.4)
 
 DEPENDENCIES:
   - Firebase/Analytics
@@ -352,7 +352,7 @@ DEPENDENCIES:
   - FirebaseFirestoreSwift
   - lottie-ios
   - Nimble
-  - Swinject
+  - Resolver
 
 SPEC REPOS:
   trunk:
@@ -379,7 +379,7 @@ SPEC REPOS:
     - nanopb
     - Nimble
     - PromisesObjC
-    - Swinject
+    - Resolver
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -405,8 +405,8 @@ SPEC CHECKSUMS:
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   Nimble: 5f8a2fb6fa343a7242dfdd9d42f7267419d464b2
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
-  Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
+  Resolver: 1f4c046255cbadfa97094692e16e940d4329779f
 
-PODFILE CHECKSUM: 4a9570b1782bc826bf903c59e4111388b8b18e88
+PODFILE CHECKSUM: deda95a33df04b2889b6f233d0d8c5b98e4227f5
 
 COCOAPODS: 1.9.3

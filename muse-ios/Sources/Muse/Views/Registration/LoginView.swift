@@ -28,13 +28,11 @@ struct LoginView: View {
           .font(Font.librarySoft(size: 64))
           .foregroundGradient([.red, .purple, .blue])
           .padding(.top, 80)
-        
         Text("Welcome back! Please login to your account to get started.")
           .fontWeight(.light)
           .foregroundColor(.secondary)
           .multilineTextAlignment(.center)
           .padding(.top, 5)
-        
         Button(action: { self.signup() }) {
           HStack {
             Text("Don't have an account?")
@@ -43,8 +41,9 @@ struct LoginView: View {
               .font(.footnote)
               .fontWeight(.semibold)
           }.padding(.top, 5)
-        }.sheet(isPresented: self.$showSignupView) { SignupView(model: self.model) }
-        
+        }.sheet(isPresented: self.$showSignupView) {
+          SignupView(model: self.model)
+        }
         VStack {
           HStack {
             Image(systemName: "envelope")
@@ -55,10 +54,8 @@ struct LoginView: View {
               .keyboardType(.emailAddress)
               .disabled(self.model.isLoggingIn)
           }
-          
           Divider()
         }.padding(.top, 50)
-        
         VStack(alignment: .leading) {
           HStack {
             Image(systemName: "lock")
@@ -69,14 +66,11 @@ struct LoginView: View {
               .keyboardType(.alphabet)
               .disabled(self.model.isLoggingIn)
           }
-          
           Divider()
-          
           Text("Forgot Password?")
             .font(.footnote)
             .foregroundColor(.secondary)
         }.padding(.top, 10)
-        
         Button(action: { self.login() }) {
           Text("Login")
             .frame(width: 200, height: 20, alignment: .center)
@@ -86,9 +80,7 @@ struct LoginView: View {
         .background(Color.blue)
         .cornerRadius(10)
         .padding(.top, 25)
-        
         Spacer()
-        
         VStack {
           Text("By Signing up, you agree to MUSE's")
             .font(.footnote)
@@ -120,8 +112,10 @@ struct LoginView: View {
   }
 }
 
+#if DEBUG
 struct LoginView_Previews: PreviewProvider {
   static var previews: some View {
     LoginView()
   }
 }
+#endif

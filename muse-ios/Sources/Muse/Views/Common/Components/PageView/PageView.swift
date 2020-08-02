@@ -17,14 +17,12 @@ struct PageView: View {
         .resizable()
         .scaledToFit()
         .padding(.horizontal, 10)
-      
       VStack {
         Text(page.heading)
           .font(.title)
           .bold()
           .multilineTextAlignment(.center)
           .padding(.top, 10)
-        
         Text(page.subSubheading)
           .multilineTextAlignment(.center)
           .padding(.top, 10)
@@ -40,6 +38,7 @@ struct Page {
   let subSubheading: String
 }
 
+#if DEBUG
 struct PageView_Previews: PreviewProvider {
   static var previews: some View {
     let page = Page(
@@ -53,4 +52,4 @@ struct PageView_Previews: PreviewProvider {
     return PageView(page: page)
   }
 }
-
+#endif

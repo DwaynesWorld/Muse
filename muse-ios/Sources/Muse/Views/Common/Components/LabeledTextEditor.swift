@@ -18,18 +18,18 @@ struct LabeledTextEditor: View {
       Text(label.uppercased())
         .font(.footnote)
         .foregroundColor(.secondary)
-      
       TextEditor(text: self.$text)
         .frame(height: 75, alignment: .topLeading)
         .autocapitalization(.sentences)
         .keyboardType(.default)
         .disabled(disabled ?? true)
-      
+        .padding(.leading, -5)
       Divider()
     }
   }
 }
 
+#if DEBUG
 struct LabeledTextEditor_Previews: PreviewProvider {
   static var previews: some View {
     VStack {
@@ -40,3 +40,4 @@ struct LabeledTextEditor_Previews: PreviewProvider {
     }.padding()
   }
 }
+#endif

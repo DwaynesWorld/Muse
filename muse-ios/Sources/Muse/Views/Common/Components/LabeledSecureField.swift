@@ -18,25 +18,25 @@ struct LabeledSecureField: View {
       Text(label.uppercased())
         .font(.footnote)
         .foregroundColor(.secondary)
-      
       SecureField("", text: $text)
         .autocapitalization(.sentences)
         .keyboardType(.default)
         .disabled(disabled)
-      
       Divider()
     }
   }
 }
 
+#if DEBUG
 struct LabeledSecureField_Previews: PreviewProvider {
-    static var previews: some View {
-      VStack {
-        LabeledSecureField(
-          label: "Last Name",
-          disabled: false,
-          text: .constant("Somthing")
-        )
-      }.padding()
-    }
+  static var previews: some View {
+    VStack {
+      LabeledSecureField(
+        label: "Last Name",
+        disabled: false,
+        text: .constant("Somthing")
+      )
+    }.padding()
+  }
 }
+#endif

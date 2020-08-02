@@ -13,39 +13,31 @@ struct CreateProjectView: View {
   
   @Binding var isPresented: Bool
   @State var name: String = ""
-  @State var description: String = "default"
+  @State var description: String = ""
   
   var body: some View {
     VStack {
       header.padding()
-      
       VStack {
         LabeledTextField(label: "Project Name", disabled: false, text: self.$name)
-        
         LabeledTextEditor(label: "Description", text: self.$description)
           .padding(.top, 20)
-        
         VStack {
           HStack {
             Circle()
               .foregroundColor(.blue)
               .frame(width: 30, height: 30, alignment: .center)
-            
             Text("Icon")
-            
             Spacer()
-            
             Image(systemName: "chevron.right")
               .foregroundColor(.gray)
               .padding(.trailing, 5)
           }
-          
           Divider()
-        }.padding(.top, 20)
+        }.padding(.top, 5)
       }
       .padding()
       .padding(.top, 20)
-      
       Spacer()
     }
   }
@@ -56,14 +48,10 @@ struct CreateProjectView: View {
         print("Cancel tapped!")
         self.isPresented.toggle()
       }
-      
       Spacer()
-      
       Text("New Project")
         .font(.headline)
-      
       Spacer()
-      
       Button("Create") {
         print("Create tapped!")
         self.model.createProject(name: self.name, description: self.description)
@@ -71,13 +59,15 @@ struct CreateProjectView: View {
       }
     }
   }
-  
-  
 }
 
+#if DEBUG
 struct CreateProjectView_Previews: PreviewProvider {
   static var previews: some View {
-    CreateProjectView(isPresented: .constant(true))
+    Group {
+      CreateProjectView(isPresented: .constant(true))
+        .preferredColorScheme(.dark)
+    }
   }
 }
-
+#endif

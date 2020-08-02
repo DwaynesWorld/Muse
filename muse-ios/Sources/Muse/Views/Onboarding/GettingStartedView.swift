@@ -24,7 +24,6 @@ struct GettingStartedView: View {
         Text("s create your first team")
           .font(.largeTitle)
           .bold()
-      
       Group {
         Text("Create projects, share ideas, organize task and complete your goals together. ")
           .foregroundColor(.secondary)
@@ -35,14 +34,11 @@ struct GettingStartedView: View {
             .bold()
           .foregroundColor(.secondary)
       }.padding(.top, 25)
-      
       LabeledTextField(label: "team name", disabled: false, text: $teamName)
         .padding(.top, 50)
         .transition(.slide)
-      
       HStack {
         Spacer()
-        
         VStack {
           Button(action: self.complete) {
             Text("Done")
@@ -62,10 +58,8 @@ struct GettingStartedView: View {
               .padding()
           }
         }
-        
         Spacer()
       }
-      
       Spacer()
     }
     .padding()
@@ -77,8 +71,10 @@ struct GettingStartedView: View {
   }
 }
 
+#if DEBUG
 struct GettingStartedView_Previews: PreviewProvider {
   static var previews: some View {
     GettingStartedView()
   }
 }
+#endif
