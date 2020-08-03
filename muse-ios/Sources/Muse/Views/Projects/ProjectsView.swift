@@ -10,30 +10,31 @@ import SwiftUI
 
 struct ProjectsView: View {
   @ObservedObject var model = ProjectsViewModel()
-  @State var showModal = false
+  @State var showCreateModal = false
+  @State var selectedProject: Project? = nil
   
   var body: some View {
     NavigationView {
       VStack(alignment: .leading) {
         if self.model.projects.count > 0 {
           List(self.model.projects, id: \.id) { project in
-            NavigationLink(destination: ProjectDetailsView(project: project)) {
-              ProjectRowView(project: project)
-            }
+            ProjectRowView(project: project)
+              .onTapGesture { self.selectedProject = project }
           }.listStyle(InsetGroupedListStyle())
         } else {
           Text("No Projects - Empty State")
         }
-      }.sheet(isPresented: self.$showModal) {
-        CreateProjectView(isPresented: self.$showModal)
+      }.sheet(isPresented: self.$showCreateModal) {
+        CreateProjectView(isPresented: self.$showCreateModal)
+      }
+      .sheet(item: self.$selectedProject) { project in
+        ProjectDetailsView(project: project)
       }
       .navigationBarTitle("Projects")
-      .navigationBarItems(trailing:
-        Button("Create") {
-          print("Create tapped!")
-          self.showModal.toggle()
-        }
-      )
+      .navigationBarItems(trailing: Button("Create") {
+        print("Create tapped!")
+        self.showCreateModal.toggle()
+      })
     }
   }
 }

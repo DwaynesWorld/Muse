@@ -45,7 +45,6 @@ struct CreateProjectView: View {
   var header: some View {
     HStack {
       Button("Cancel") {
-        print("Cancel tapped!")
         self.isPresented.toggle()
       }
       Spacer()
@@ -53,7 +52,6 @@ struct CreateProjectView: View {
         .font(.headline)
       Spacer()
       Button("Create") {
-        print("Create tapped!")
         self.model.createProject(name: self.name, description: self.description)
         self.isPresented.toggle()
       }
