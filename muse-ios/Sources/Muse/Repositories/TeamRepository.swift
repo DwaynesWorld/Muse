@@ -24,7 +24,7 @@ protocol TeamRepository: BaseTeamRepository {
 }
 
 class FirestoreTeamRepository: BaseTeamRepository, TeamRepository  {
-  @Injected var userService: UserRepository
+  @Injected var userRepository: UserRepository
   
   lazy private var collection = Firestore.firestore().collection("teams")
   private var userId: String?
@@ -32,12 +32,12 @@ class FirestoreTeamRepository: BaseTeamRepository, TeamRepository  {
   override init() {
     super.init()
     
-    userService.$user
+    userRepository.$user
       .compactMap { $0?.userId }
       .assign(to: \.userId, on: self)
       .store(in: &cancellables)
     
-    userService.$user
+    userRepository.$user
       .receive(on: DispatchQueue.main)
       .sink { _ in self.load() }
       .store(in: &cancellables)

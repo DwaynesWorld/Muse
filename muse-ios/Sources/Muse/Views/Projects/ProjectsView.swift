@@ -32,7 +32,6 @@ struct ProjectsView: View {
       }
       .navigationBarTitle("Projects")
       .navigationBarItems(trailing: Button("Create") {
-        print("Create tapped!")
         self.showCreateModal.toggle()
       })
     }

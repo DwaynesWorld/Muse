@@ -10,9 +10,9 @@ import Foundation
 import Resolver
 
 class MainViewModel: ObservableObject {
-  @Injected private var userService: UserRepository
+  @Injected private var userRepository: UserRepository
   
   func hasTeam() -> Bool {
-    userService.user?.hasTeam ?? false
+    userRepository.user?.hasTeam ?? false
   }
 }

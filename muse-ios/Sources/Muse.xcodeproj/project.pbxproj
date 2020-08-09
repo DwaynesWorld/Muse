@@ -187,9 +187,9 @@
 			isa = PBXGroup;
 			children = (
 				68AF322C24B68417005E1829 /* BaseRepository.swift */,
-				68B325D524A9498A00B90F24 /* UserRepository.swift */,
-				68AF322A24B683D0005E1829 /* TeamRepository.swift */,
 				68B325D124A934BA00B90F24 /* ProjectRepository.swift */,
+				68AF322A24B683D0005E1829 /* TeamRepository.swift */,
+				68B325D524A9498A00B90F24 /* UserRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -228,15 +228,15 @@
 		68B3255924A79C8E00B90F24 /* Muse */ = {
 			isa = PBXGroup;
 			children = (
+				68B3258C24A7B2C000B90F24 /* Application */,
+				68B325A024A7D12200B90F24 /* Extensions */,
+				68B325AD24A7DAC400B90F24 /* Infrastructure */,
 				68B325A524A7D89800B90F24 /* Models */,
+				6862B68724D76A1D001769F4 /* Repositories */,
+				68B3258D24A7B2E800B90F24 /* Resources */,
+				68B325AA24A7D9B500B90F24 /* Services */,
 				68B325A724A7D8A600B90F24 /* ViewModels */,
 				68B3259024A7B39B00B90F24 /* Views */,
-				6862B68724D76A1D001769F4 /* Repositories */,
-				68B325AA24A7D9B500B90F24 /* Services */,
-				68B325AD24A7DAC400B90F24 /* Infrastructure */,
-				68B325A024A7D12200B90F24 /* Extensions */,
-				68B3258D24A7B2E800B90F24 /* Resources */,
-				68B3258C24A7B2C000B90F24 /* Application */,
 			);
 			path = Muse;
 			sourceTree = "<group>";
@@ -262,9 +262,9 @@
 		68B3258C24A7B2C000B90F24 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				68B3255C24A79C8E00B90F24 /* SceneDelegate.swift */,
 				68B3255A24A79C8E00B90F24 /* AppDelegate.swift */,
 				6862B68824D77BD8001769F4 /* AppDelegate+Injection.swift */,
+				68B3255C24A79C8E00B90F24 /* SceneDelegate.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -276,9 +276,9 @@
 				68B3259A24A7D0A300B90F24 /* Fonts */,
 				68B3256024A79C8F00B90F24 /* Assets.xcassets */,
 				68B3256324A79C8F00B90F24 /* Preview Assets.xcassets */,
-				68B3258E24A7B38200B90F24 /* LaunchScreen.storyboard */,
 				68B3259124A7B51B00B90F24 /* GoogleService-Info.plist */,
 				68B3256824A79C8F00B90F24 /* Info.plist */,
+				68B3258E24A7B38200B90F24 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -287,10 +287,10 @@
 			isa = PBXGroup;
 			children = (
 				68B3259624A7C19B00B90F24 /* Common */,
-				68B3259324A7B99C00B90F24 /* Registration */,
+				68B325B924A8F61000B90F24 /* Dashboard */,
 				68D6747E24AD524E0049412F /* Onboarding */,
 				68B325BC24A9077400B90F24 /* Projects */,
-				68B325B924A8F61000B90F24 /* Dashboard */,
+				68B3259324A7B99C00B90F24 /* Registration */,
 				68B325B724A7F99E00B90F24 /* MainView.swift */,
 				68B3255E24A79C8E00B90F24 /* RootView.swift */,
 			);
@@ -309,8 +309,8 @@
 		68B3259624A7C19B00B90F24 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				68B325C524A90C1300B90F24 /* Shapes */,
 				68B3259724A7C1A500B90F24 /* Components */,
+				68B325C524A90C1300B90F24 /* Shapes */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -321,8 +321,8 @@
 				68B47CE724AD2CF100D6C948 /* PageView */,
 				68B325B424A7F6B900B90F24 /* ActivityIndicator.swift */,
 				68B47CD824AC0BD500D6C948 /* LabeledSecureField.swift */,
-				68B47CD624AC071700D6C948 /* LabeledTextField.swift */,
 				68AF323224B7C922005E1829 /* LabeledTextEditor.swift */,
+				68B47CD624AC071700D6C948 /* LabeledTextField.swift */,
 				68B325C124A90C0B00B90F24 /* LoadingView.swift */,
 				68B325C224A90C0B00B90F24 /* LottieView.swift */,
 			);
@@ -359,10 +359,10 @@
 			isa = PBXGroup;
 			children = (
 				68B325D724A94B8700B90F24 /* MuseUser.swift */,
-				68B325D324A93D3800B90F24 /* Team.swift */,
 				68B325C824A9297C00B90F24 /* Project.swift */,
-				68B325CA24A92BEE00B90F24 /* Task.swift */,
 				68B325CC24A92DEB00B90F24 /* Status.swift */,
+				68B325CA24A92BEE00B90F24 /* Task.swift */,
+				68B325D324A93D3800B90F24 /* Team.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -370,12 +370,12 @@
 		68B325A724A7D8A600B90F24 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				68B325A824A7D8D900B90F24 /* RegistrationViewModel.swift */,
-				68B325CE24A932C800B90F24 /* ProjectsViewModel.swift */,
-				68B47CDA24ACD6A600D6C948 /* MainViewModel.swift */,
-				68B47CDE24ACFAE000D6C948 /* RootViewModel.swift */,
-				68AF322324B3F29C005E1829 /* GettingStartedViewModel.swift */,
 				68AF323424B7D4FC005E1829 /* CreateProjectViewModel.swift */,
+				68AF322324B3F29C005E1829 /* GettingStartedViewModel.swift */,
+				68B47CDA24ACD6A600D6C948 /* MainViewModel.swift */,
+				68B325CE24A932C800B90F24 /* ProjectsViewModel.swift */,
+				68B325A824A7D8D900B90F24 /* RegistrationViewModel.swift */,
+				68B47CDE24ACFAE000D6C948 /* RootViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -407,10 +407,10 @@
 		68B325BC24A9077400B90F24 /* Projects */ = {
 			isa = PBXGroup;
 			children = (
-				68B325BD24A9079600B90F24 /* ProjectsView.swift */,
-				68B325BF24A9084400B90F24 /* ProjectRowView.swift */,
-				68D1E79624BA655100F72400 /* ProjectDetailsView.swift */,
 				68AF322E24B7B904005E1829 /* CreateProjectView.swift */,
+				68D1E79624BA655100F72400 /* ProjectDetailsView.swift */,
+				68B325BF24A9084400B90F24 /* ProjectRowView.swift */,
+				68B325BD24A9079600B90F24 /* ProjectsView.swift */,
 			);
 			path = Projects;
 			sourceTree = "<group>";
@@ -426,10 +426,10 @@
 		68B47CE724AD2CF100D6C948 /* PageView */ = {
 			isa = PBXGroup;
 			children = (
-				68B47CE124AD284100D6C948 /* PageViewController.swift */,
-				68B47CE324AD2B9100D6C948 /* PageView.swift */,
 				68D6747824AD35670049412F /* PageIndicator.swift */,
+				68B47CE324AD2B9100D6C948 /* PageView.swift */,
 				68D6747A24AD390F0049412F /* PageViewContainer.swift */,
+				68B47CE124AD284100D6C948 /* PageViewController.swift */,
 			);
 			path = PageView;
 			sourceTree = "<group>";

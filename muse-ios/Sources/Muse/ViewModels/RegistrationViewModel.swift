@@ -11,7 +11,7 @@ import Resolver
 
 class RegistrationViewModel: ObservableObject {
   @Injected private var authenticationService: AuthenticationService
-  @Injected private var userService: UserRepository
+  @Injected private var userRepository: UserRepository
   @Published var isLoggingIn = false
   @Published var isSigningUp = false
   
@@ -75,7 +75,7 @@ class RegistrationViewModel: ObservableObject {
             lastName: lastName
           )
           
-          try self.userService.create(&user)
+          try self.userRepository.create(&user)
         } catch let error {
           print(error.localizedDescription)
         }

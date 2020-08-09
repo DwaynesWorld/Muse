@@ -12,7 +12,7 @@ import Resolver
 
 class RootViewModel: ObservableObject {
   @Injected private var authenticationService: AuthenticationService
-  @Injected private var userService: UserRepository
+  @Injected private var userRepository: UserRepository
   @Published var isLoggedIn: Bool = false
   @Published var userInitialized: Bool = false
   @Published var onboardingComplete: Bool = false
@@ -24,12 +24,12 @@ class RootViewModel: ObservableObject {
       .assign(to: \.isLoggedIn, on: self)
       .store(in: &cancellables)
     
-    userService.$user
+    userRepository.$user
       .compactMap { $0?.onboardingCompleted }
       .assign(to: \.onboardingComplete, on: self)
       .store(in: &cancellables)
     
-    userService.$user
+    userRepository.$user
       .compactMap { $0 == nil ? false : true }
       .assign(to: \.userInitialized, on: self)
       .store(in: &cancellables)
@@ -41,5 +41,6 @@ class RootViewModel: ObservableObject {
   
   deinit {
     cancellables.forEach { $0.cancel() }
+    cancellables.removeAll()
   }
 }

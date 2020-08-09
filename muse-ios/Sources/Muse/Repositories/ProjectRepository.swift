@@ -11,7 +11,7 @@ import Combine
 import FirebaseFirestore
 import Resolver
 
-class BaseProjectRepository {
+class BaseProjectRepository: BaseRepository {
   @Published var projects: [Project] = []
 }
 
@@ -23,22 +23,21 @@ protocol ProjectRepository: BaseProjectRepository {
   func delete(id: String)
 }
 
-class FirestoreProjectRepository: BaseProjectRepository, ProjectRepository, ObservableObject {
-  @Injected var userService: UserRepository
+class FirestoreProjectRepository: BaseProjectRepository, ProjectRepository {
+  @Injected var userRepository: UserRepository
   
   lazy private var collection = Firestore.firestore().collection("projects")
-  private var cancellables = Set<AnyCancellable>()
   private var teamId: String?
   
   override init() {
     super.init()
     
-    userService.$user
+    userRepository.$user
       .compactMap { $0?.currentTeamId }
       .assign(to: \.teamId, on: self)
       .store(in: &cancellables)
     
-    userService.$user
+    userRepository.$user
       .receive(on: DispatchQueue.main)
       .sink { _ in self.load() }
       .store(in: &cancellables)
@@ -110,10 +109,6 @@ class FirestoreProjectRepository: BaseProjectRepository, ProjectRepository, Obse
   
   func delete(id: String) {
     collection.document(id).delete()
-  }
-  
-  deinit {
-    cancellables.forEach { $0.cancel() }
   }
 }
 
